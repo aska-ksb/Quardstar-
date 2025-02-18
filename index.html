@@ -5,73 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quardstar Solid General Services</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #E1F5FE; /* Soft light blue background */
-            color: #333;
-        }
+        /* Style the menu button */
+#menu-btn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Move to the right side */
+}
 
-        header {
-            background-color: #3c89d6; /* Soft blue color for header */
-            color: white;
-            position: relative;
-            padding: 40px 20px;
-            padding-left: 120px;
-            text-align: center;
-        }
-        
+/* Hide the navigation by default */
+/* Fix for mobile menu */
+#nav-menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: #2D6A4F;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
 
-    header h1 {
-        font-size: 1.8rem;
-    }
+#menu-btn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
 
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .services {
-        display: block;
-    }
-
+@media screen and (max-width: 768px) {
     .service-box {
         width: 100%;
         margin-bottom: 20px;
     }
-
-        header img {
-    background-color: transparent;
-    mix-blend-mode: multiply;
 }
 
-        header img {
-    position: absolute;
-    top: 30px;
-    left: 10px;
-    height: 80px;
+
+/* Show links as a block (vertical list) */
+#nav-menu a {
+    display: block;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
 }
-        header h1 {
+
+/* Show when menu is open */
+#nav-menu.active {
+    display: block;
+}
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            color: #f51900d3;
+            padding: 0;
+            background-color: #E6F4EA; /* Exotic green background */
+            color: #2C3E50;
+        }
+
+        header {
+            background-color: #1A6F2E; /* Deep green for professionalism */
+            color: white;
+            position: relative;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
             font-size: 2.5rem;
+            margin: 0;
+            color: #F8F9FA;
+        }
+
+        header img {
+            position: absolute;
+            top: 30px;
+            left: 10px;
+            height: 80px;
+            background-color: transparent;
+    mix-blend-mode: multiply;
+    filter: brightness(1.2) contrast(1.1);
         }
 
         nav {
-    padding-top: 20px; /* Adds space above the navigation */
-}
+            display: flex;
+            justify-content: center;
+            background-color: #145A32;
+            padding: 15px 0;
+        }
 
         nav a {
             color: white;
             text-decoration: none;
             padding: 12px 20px;
-            margin: 0 15px;
+            margin: 0 10px;
             font-weight: bold;
+            transition: background 0.3s;
         }
 
         nav a:hover {
-            background-color: #1F598B; /* Darker blue hover effect */
+            background-color: #0E4823;
             border-radius: 5px;
         }
 
@@ -80,19 +120,12 @@
             background-size: cover;
             height: 500px;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            color: white;
+            justify-content: center;
             text-align: center;
+            color: white;
             box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
-            padding-top: 100px;
         }
-        @media only screen and (max-width: 600px) {
-            .hero {
-        height: 300px; /* Adjusted height for smaller screens */
-    }
-}
 
         .hero h2 {
             font-size: 3rem;
@@ -106,13 +139,13 @@
 
         h2 {
             font-size: 2rem;
-            color: #2980B9; /* Soft blue color for headings */
+            color: #1A6F2E;
         }
 
         .about-text {
             font-size: 1.2rem;
             line-height: 1.6;
-            color: #7f8c8d;
+            color: #4A6C57;
             max-width: 900px;
             margin: 0 auto;
         }
@@ -120,12 +153,13 @@
         .services {
             display: flex;
             justify-content: space-evenly;
+            flex-wrap: wrap;
             margin-top: 40px;
         }
 
         .service-box {
-            width: 25%;
-            background-color: #fff;
+            width: 30%;
+            background-color: #ffffff;
             padding: 20px;
             text-align: center;
             border-radius: 10px;
@@ -138,17 +172,17 @@
         }
 
         .service-box h3 {
-            color: #E74C3C; /* Soft red color for titles */
+            color: #1A6F2E;
             font-size: 1.8rem;
         }
 
         .service-box p {
             font-size: 1.1rem;
-            color: #7f8c8d;
+            color: #4A6C57;
         }
 
         footer {
-            background-color: #2980B9; /* Soft blue footer */
+            background-color: #145A32;
             color: white;
             padding: 30px 20px;
             text-align: center;
@@ -156,7 +190,7 @@
         }
 
         footer a {
-            color: #E74C3C; /* Soft red color for footer links */
+            color: #F8F9FA;
             text-decoration: none;
             font-weight: bold;
         }
@@ -170,32 +204,35 @@
 
     <header>
         <h1>Quardstar Solid General Services</h1>
-        <img src="logo.jpg" alt="Company Logo" style="height: 80px;">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a> 
-            <a href="Services.html">Services</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact Us</a>
-        </nav>
-    </header>
+        <img src="logo.png" alt="Company Logo">
 
-    <!-- Hero Section -->
+        <!-- Menu Button (☰) -->
+    <button id="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <!-- Navigation Menu -->
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a> 
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+</header>
+
+
     <section class="hero">
         <div>
             <h2>Exporting Premium Sesame Seeds from Nigeria</h2>
         </div>
     </section>
 
-    <!-- About Us Section -->
     <section>
         <h2>About Us</h2>
         <p class="about-text">
-            Quardstar Solid General Services is a leading company specializing in the export of top-quality sesame seeds from Nigeria to international markets. With years of experience in the industry, we ensure our clients receive the highest standards of product quality, reliability, and customer service. Our team is dedicated to providing seamless export processes and supporting sustainable agricultural practices.
+            Quardstar Solid General Services is a leading company specializing in the export of top-quality sesame seeds from Nigeria to international markets. We ensure our clients receive the highest standards of product quality, reliability, and customer service while supporting sustainable agricultural practices.
         </p>
     </section>
 
-    <!-- Services Overview Section -->
     <section>
         <h2>Our Services</h2>
         <div class="services">
@@ -214,17 +251,47 @@
         </div>
     </section>
 
-    <!-- Contact Preview Section -->
     <section>
         <h2>Contact Us</h2>
         <p>Email: <a href="mailto:info@quardstarsolid.com">info@quardstarsolid.com</a></p>
     </section>
 
-    <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Quardstar Solid General Services. All rights reserved.</p>
         <p>Follow us on: <a href="#">Facebook</a>, <a href="#">LinkedIn</a></p>
     </footer>
 
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("menu-btn");
+        const navMenu = document.getElementById("nav-menu");
+        const navLinks = navMenu.querySelectorAll("a"); // Select all links inside nav
+
+        menuBtn.addEventListener("click", function () {
+            // Toggle the menu visibility
+            if (navMenu.style.display === "block") {
+                navMenu.style.display = "none";
+            } else {
+                navMenu.style.display = "block";
+            }
+        });
+
+        // Close menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener("click", function () {
+                navMenu.style.display = "none";
+            });
+        });
+
+        // Close menu when clicking outside the menu
+        document.addEventListener("click", function (event) {
+            if (!menuBtn.contains(event.target) && !navMenu.contains(event.target)) {
+                navMenu.style.display = "none";
+            }
+        });
+    });
+</script>
+</body>
 </html>
+
