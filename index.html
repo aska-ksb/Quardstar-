@@ -5,231 +5,385 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quardstar Solid General Services</title>
     <style>
-        /* Style the menu button */
-#menu-btn {
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px; /* Move to the right side */
-}
-
-/* Hide the navigation by default */
-/* Fix for mobile menu */
-#nav-menu {
-    display: none;
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    background: #2D6A4F;
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 10;
-}
-
-#menu-btn {
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-@media screen and (max-width: 768px) {
-    .service-box {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-}
-
-
-/* Show links as a block (vertical list) */
-#nav-menu a {
-    display: block;
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-}
-
-/* Show when menu is open */
-#nav-menu.active {
-    display: block;
-}
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #E6F4EA; /* Exotic green background */
+        }
+
+        body {
+            font-family: 'Georgia', serif; /* Elegant serif font for sophistication */
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #F5F9F7 0%, #E6F4EA 100%); /* Subtle elegant gradient */
             color: #2C3E50;
         }
 
         header {
-            background-color: #1A6F2E; /* Deep green for professionalism */
+            background: linear-gradient(90deg, #2D6A4F 0%, #145A32 100%);
             color: white;
             position: relative;
-            padding: 40px 20px;
+            padding: 50px 40px 30px;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for elegance */
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.4rem; /* Reduced for a moderate, professional size */
             margin: 0;
             color: #F8F9FA;
+            font-weight: 600; /* Slightly lighter for elegance */
+            text-transform: uppercase;
+            letter-spacing: 1px; /* Reduced for subtlety */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         header img {
             position: absolute;
-            top: 30px;
-            left: 10px;
-            height: 80px;
+            top: 20px;
+            left: 40px;
+            height: 100px;
             background-color: transparent;
-    mix-blend-mode: multiply;
-    filter: brightness(1.2) contrast(1.1);
+            mix-blend-mode: multiply;
+            filter: brightness(1.2) contrast(1.1);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for logo */
         }
 
-        nav {
-            display: flex;
+        #menu-btn {
+            font-size: 2.2rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        #menu-btn:hover {
+            color: #F8F9FA;
+            transform: scale(1.1);
+        }
+
+        #nav-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -50%;
+            width: 50%;
+            height: 100vh;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(26, 111, 46, 0.9) 100%);
+            z-index: 1000;
+            flex-direction: column;
             justify-content: center;
-            background-color: #145A32;
-            padding: 15px 0;
+            align-items: center;
+            transition: right 0.4s ease-in-out;
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px); /* Elegant blur effect */
         }
 
-        nav a {
+        #nav-menu.active {
+            display: flex;
+            right: 0;
+        }
+
+        #nav-menu a {
             color: white;
             text-decoration: none;
-            padding: 12px 20px;
-            margin: 0 10px;
-            font-weight: bold;
-            transition: background 0.3s;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 20px 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease, opacity 0.3s ease;
         }
 
-        nav a:hover {
-            background-color: #0E4823;
-            border-radius: 5px;
+        #nav-menu.active a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #nav-menu a:nth-child(2) { transition-delay: 0.1s; }
+        #nav-menu a:nth-child(3) { transition-delay: 0.2s; }
+        #nav-menu a:nth-child(4) { transition-delay: 0.3s; }
+        #nav-menu a:nth-child(5) { transition-delay: 0.4s; }
+        #nav-menu a:nth-child(6) { transition-delay: 0.5s; }
+
+        #nav-menu a:hover {
+            color: #F8F9FA;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            transform: translateX(5px);
+        }
+
+        #close-btn {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            font-size: 2.2rem;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        #close-btn:hover {
+            color: #F8F9FA;
+            transform: scale(1.1);
         }
 
         .hero {
-            background: url('your-image-url.jpg') no-repeat center center;
+            background: url('path/to/real-image.jpg') no-repeat center center;
             background-size: cover;
-            height: 500px;
+            height: 600px;
             display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
             align-items: center;
-            justify-content: center;
             text-align: center;
             color: white;
-            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
+            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.3);
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Elegant border */
         }
 
         .hero h2 {
-            font-size: 3rem;
-            margin: 0;
+            font-size: 2.2rem; /* Reduced for a moderate, professional size */
+            margin: 0 0 30px 0;
+            z-index: 1;
+            font-weight: 600; /* Slightly lighter for elegance */
+            text-transform: uppercase;
+            letter-spacing: 1px; /* Reduced for subtlety */
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-images {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 420px;
+            margin-top: 0;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .hero-images img {
+            width: 50%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 0;
+            box-shadow: none;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
         }
 
         section {
-            padding: 60px 20px;
+            padding: 100px 40px;
             text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid rgba(74, 108, 87, 0.1); /* Subtle elegant divider */
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #1A6F2E;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .about-text {
-            font-size: 1.2rem;
-            line-height: 1.6;
+            font-size: 1.4rem;
+            line-height: 2;
             color: #4A6C57;
             max-width: 900px;
             margin: 0 auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(26, 111, 46, 0.2); /* Elegant border */
         }
 
         .services {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-between;
             flex-wrap: wrap;
-            margin-top: 40px;
+            margin-top: 50px;
+            gap: 40px;
         }
 
         .service-box {
             width: 30%;
-            background-color: #ffffff;
-            padding: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #F5F9F7 100%);
+            padding: 30px;
             text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            border: 2px solid rgba(26, 111, 46, 0.1); /* Subtle border for elegance */
         }
 
         .service-box:hover {
             transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
         .service-box h3 {
             color: #1A6F2E;
-            font-size: 1.8rem;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .service-box p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #4A6C57;
+            padding: 15px;
         }
 
         footer {
-            background-color: #145A32;
+            background: linear-gradient(90deg, #145A32 0%, #1A6F2E 100%);
             color: white;
-            padding: 30px 20px;
+            padding: 50px 40px;
             text-align: center;
-            font-size: 1rem;
+            font-size: 1.2rem;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+            border-top: 2px solid rgba(255, 255, 255, 0.2); /* Elegant border */
         }
 
         footer a {
             color: #F8F9FA;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
 
         footer a:hover {
+            color: #ffffff;
             text-decoration: underline;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 30px 20px 20px;
+            }
+
+            header h1 {
+                font-size: 1.8rem; /* Reduced for mobile, still professional */
+            }
+
+            header img {
+                height: 80px;
+                top: 15px;
+                left: 20px;
+            }
+
+            #menu-btn, #close-btn {
+                font-size: 1.8rem;
+                top: 15px;
+                right: 20px;
+            }
+
+            .hero {
+                height: 400px;
+                padding-top: 50px;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem; /* Reduced for mobile, professional and moderate */
+            }
+
+            .hero-images {
+                height: 250px;
+                padding: 0 10px;
+            }
+
+            .hero-images img {
+                width: 100%;
+                height: 125px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .about-text {
+                font-size: 1.1rem;
+                padding: 20px;
+                border-radius: 10px;
+            }
+
+            .services {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .service-box {
+                width: 100%;
+                padding: 20px;
+                border-radius: 10px;
+            }
+
+            .service-box h3 {
+                font-size: 1.6rem;
+            }
+
+            .service-box p {
+                font-size: 1rem;
+            }
+
+            footer {
+                padding: 30px 20px;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-
     <header>
         <h1>Quardstar Solid General Services</h1>
-        <img src="logo.png" alt="Company Logo">
-
-        <!-- Menu Button (☰) -->
-    <button id="menu-btn" onclick="toggleMenu()">☰</button>
-
-    <!-- Navigation Menu -->
-    <nav id="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a> 
-        <a href="services.html">Services</a>
-        <a href="products.html">Products</a>
-        <a href="contact.html">Contact Us</a>
-    </nav>
-</header>
-
+        <img src="logo.png" alt="Quardstar Solid General Services Logo">
+        <button id="menu-btn" aria-label="Toggle navigation menu">☰</button>
+        <nav id="nav-menu">
+            <button id="close-btn" aria-label="Close navigation menu">✕</button>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
 
     <section class="hero">
-        <div>
-            <h2>Exporting Premium Sesame Seeds from Nigeria</h2>
+        <h2>Exporting Premium products from Nigeria</h2>
+        <div class="hero-images">
+            <img src="images/sesame pic.jpg" alt="Sesame seeds in warehouse 1">
+            <img src="images/zobo pic.jpg" alt="Sesame seeds in warehouse 2">
         </div>
     </section>
 
     <section>
         <h2>About Us</h2>
         <p class="about-text">
-            Quardstar Solid General Services is a leading company specializing in the export of top-quality sesame seeds from Nigeria to international markets. We ensure our clients receive the highest standards of product quality, reliability, and customer service while supporting sustainable agricultural practices.
+            Quardstar Solid General Services, a subsidiary of Quardstar Group is a leading Nigerian company specializing in the export of top-quality sesame seeds and hibiscus flower from Nigeria to international markets. We ensure our clients receive the highest standards of product quality, reliability, and customer service while supporting sustainable agricultural practices.
         </p>
     </section>
 
@@ -237,8 +391,8 @@
         <h2>Our Services</h2>
         <div class="services">
             <div class="service-box">
-                <h3>Sesame Seed Export</h3>
-                <p>We export premium sesame seeds that meet international standards, offering a reliable and high-quality supply chain.</p>
+                <h3>Sesame Seed & Hibiscus Flower Export</h3>
+                <p>We export premium sesame seeds and dried hibiscus flower that meet international standards, offering a reliable and high-quality supply chain.</p>
             </div>
             <div class="service-box">
                 <h3>Logistics & Delivery</h3>
@@ -246,7 +400,7 @@
             </div>
             <div class="service-box">
                 <h3>Quality Control</h3>
-                <p>Our stringent quality control processes guarantee that every batch of sesame seeds is tested for purity, size, and overall quality.</p>
+                <p>Our stringent quality control processes guarantee that every batch of product is tested for purity, size, and overall quality.</p>
             </div>
         </div>
     </section>
@@ -257,41 +411,39 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Quardstar Solid General Services. All rights reserved.</p>
+        <p>© 2025 Quardstar Solid General Services. All rights reserved.</p>
         <p>Follow us on: <a href="#">Facebook</a>, <a href="#">LinkedIn</a></p>
     </footer>
 
-</body>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const menuBtn = document.getElementById("menu-btn");
-        const navMenu = document.getElementById("nav-menu");
-        const navLinks = navMenu.querySelectorAll("a"); // Select all links inside nav
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("menu-btn");
+            const navMenu = document.getElementById("nav-menu");
+            const navLinks = navMenu.querySelectorAll("a");
+            const closeBtn = document.getElementById("close-btn");
 
-        menuBtn.addEventListener("click", function () {
-            // Toggle the menu visibility
-            if (navMenu.style.display === "block") {
-                navMenu.style.display = "none";
-            } else {
-                navMenu.style.display = "block";
-            }
-        });
+            menuBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                navMenu.classList.toggle("active");
+            });
 
-        // Close menu when clicking a link
-        navLinks.forEach(link => {
-            link.addEventListener("click", function () {
-                navMenu.style.display = "none";
+            closeBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                navMenu.classList.remove("active");
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", function () {
+                    navMenu.classList.remove("active");
+                });
+            });
+
+            document.addEventListener("click", function (event) {
+                if (!menuBtn.contains(event.target) && !navMenu.contains(event.target)) {
+                    navMenu.classList.remove("active");
+                }
             });
         });
-
-        // Close menu when clicking outside the menu
-        document.addEventListener("click", function (event) {
-            if (!menuBtn.contains(event.target) && !navMenu.contains(event.target)) {
-                navMenu.style.display = "none";
-            }
-        });
-    });
-</script>
+    </script>
 </body>
 </html>
-
