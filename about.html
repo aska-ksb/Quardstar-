@@ -5,165 +5,365 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Quardstar Solid General Services</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #E1F5FE; /* Soft light blue background */
-            color: #333;
+        }
+
+        body {
+            font-family: 'Georgia', serif; /* Elegant serif font for sophistication */
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #F5F9F7 0%, #E6F4EA 100%); /* Subtle elegant gradient */
+            color: #2C3E50;
         }
 
         header {
-            background-color: #2980B9; /* Soft blue color for header */
+            background: linear-gradient(90deg, #2D6A4F 0%, #145A32 100%);
             color: white;
-            padding: 20px 0;
+            position: relative;
+            padding: 50px 40px 30px;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for elegance */
         }
 
         header h1 {
+            font-size: 2.4rem; /* Moderate, professional size */
             margin: 0;
-            font-size: 2.5rem;
+            color: #F8F9FA;
+            font-weight: 600; /* Slightly lighter for elegance */
+            text-transform: uppercase;
+            letter-spacing: 1px; /* Reduced for subtlety */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
-        nav a {
+        header img {
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            height: 100px;
+            background-color: transparent;
+            mix-blend-mode: multiply;
+            filter: brightness(1.2) contrast(1.1);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for logo */
+        }
+
+        #menu-btn {
+            font-size: 2.2rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        #menu-btn:hover {
+            color: #F8F9FA;
+            transform: scale(1.1);
+        }
+
+        #nav-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -50%;
+            width: 50%;
+            height: 100vh;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(26, 111, 46, 0.9) 100%);
+            z-index: 1000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: right 0.4s ease-in-out;
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px); /* Elegant blur effect */
+        }
+
+        #nav-menu.active {
+            display: flex;
+            right: 0;
+        }
+
+        #nav-menu a {
             color: white;
             text-decoration: none;
-            padding: 12px 20px;
-            margin: 0 15px;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 20px 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease, opacity 0.3s ease;
         }
 
-        nav a:hover {
-            background-color: #1F598B; /* Darker blue hover effect */
-            border-radius: 5px;
+        #nav-menu.active a {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .hero {
-            background-color: #2980B9; /* Soft blue color for the hero section */
+        #nav-menu a:nth-child(2) { transition-delay: 0.1s; }
+        #nav-menu a:nth-child(3) { transition-delay: 0.2s; }
+        #nav-menu a:nth-child(4) { transition-delay: 0.3s; }
+        #nav-menu a:nth-child(5) { transition-delay: 0.4s; }
+        #nav-menu a:nth-child(6) { transition-delay: 0.5s; }
+
+        #nav-menu a:hover {
+            color: #F8F9FA;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            transform: translateX(5px);
+        }
+
+        #close-btn {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            font-size: 2.2rem;
             color: white;
-            padding: 60px 20px;
-            text-align: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
-        .hero h2 {
-            font-size: 3rem;
-            margin: 0;
+        #close-btn:hover {
+            color: #F8F9FA;
+            transform: scale(1.1);
         }
 
         section {
-            padding: 60px 20px;
+            padding: 100px 40px;
             text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid rgba(74, 108, 87, 0.1); /* Subtle elegant divider */
         }
 
         h2 {
-            font-size: 2rem;
-            color: #2980B9; /* Soft blue color for headings */
+            font-size: 2.5rem;
+            color: #1A6F2E;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
-        .about-text {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #7f8c8d;
+        .about-text, section p {
+            font-size: 1.4rem;
+            line-height: 2;
+            color: #4A6C57;
             max-width: 900px;
             margin: 0 auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(26, 111, 46, 0.2); /* Elegant border */
         }
 
         .our-values {
             display: flex;
-            justify-content: space-evenly;
-            margin-top: 40px;
+            justify-content: space-between;
             flex-wrap: wrap;
+            margin-top: 50px;
+            gap: 40px;
         }
 
         .value-box {
             width: 30%;
-            background-color: #fff;
+            background: linear-gradient(135deg, #F0F8F3 0%, #E6F4EA 100%); /* Light green shade complementing the page */
             padding: 30px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-            margin-bottom: 30px;
+            text-align: center; /* Center the text horizontally */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            border: 2px solid rgba(26, 111, 46, 0.1); /* Subtle border for elegance */
+            display: flex; /* Use flexbox for vertical centering */
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            min-height: 200px; /* Minimum height to ensure consistent size */
         }
 
         .value-box:hover {
             transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
         .value-box h3 {
-            color: #E74C3C; /* Soft red color for values */
-            font-size: 1.8rem;
+            color: #1A6F2E;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 15px; /* Reduced margin for better fit */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .value-box p {
-            font-size: 1.1rem;
-            color: #7f8c8d;
+            font-size: 1.1rem; /* Slightly reduced for better fit */
+            color: #4A6C57;
+            padding: 10px; /* Reduced padding to prevent overflow */
+            word-wrap: break-word; /* Ensure text wraps if too long */
         }
 
-        /* New section style for Why Choose Us */
-        .why-choose-us {
-            background-color: #ffffff;
+        .why-choose-us, .mission {
+            background: rgba(255, 255, 255, 0.95);
             padding: 40px;
             margin-top: 40px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            border: 2px solid rgba(26, 111, 46, 0.2); /* Elegant border */
         }
 
         .why-choose-us h2 {
-            color: #2980B9;
+            color: #1A6F2E;
             font-size: 2.5rem;
-            margin-bottom: 30px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .why-choose-us ul {
             list-style-type: none;
             padding: 0;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .why-choose-us li {
             font-size: 1.2rem;
-            color: #7f8c8d;
-            padding: 10px 0;
+            color: #4A6C57;
+            padding: 15px 0;
+            text-align: left;
+            position: relative;
+        }
+
+        .why-choose-us li:before {
+            content: "•";
+            color: #1A6F2E;
+            font-size: 1.5rem;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        section h3 {
+            color: #1A6F2E;
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         footer {
-            background-color: #2980B9; /* Soft blue footer */
+            background: linear-gradient(90deg, #145A32 0%, #1A6F2E 100%);
             color: white;
-            padding: 30px 20px;
+            padding: 50px 40px;
             text-align: center;
-            font-size: 1rem;
+            font-size: 1.2rem;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+            border-top: 2px solid rgba(255, 255, 255, 0.2); /* Elegant border */
         }
 
         footer a {
-            color: #E74C3C; /* Soft red color for footer links */
+            color: #F8F9FA;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
 
         footer a:hover {
+            color: #ffffff;
             text-decoration: underline;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 30px 20px 20px;
+            }
+
+            header h1 {
+                font-size: 1.8rem; /* Reduced for mobile, still professional */
+            }
+
+            header img {
+                height: 80px;
+                top: 15px;
+                left: 20px;
+            }
+
+            #menu-btn, #close-btn {
+                font-size: 1.8rem;
+                top: 15px;
+                right: 20px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            h2, .why-choose-us h2, section h3 {
+                font-size: 2rem;
+            }
+
+            .about-text, section p, .why-choose-us li, .value-box p {
+                font-size: 1.1rem;
+                padding: 20px;
+                border-radius: 10px;
+            }
+
+            .our-values, .services {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .value-box, .service-box {
+                width: 100%;
+                padding: 20px;
+                border-radius: 10px;
+                min-height: 180px; /* Adjusted for mobile to maintain centering */
+            }
+
+            .value-box h3, .service-box h3 {
+                font-size: 1.6rem;
+            }
+
+            .why-choose-us, .mission {
+                padding: 30px;
+            }
+
+            footer {
+                padding: 30px 20px;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-
     <header>
         <h1>Quardstar Solid General Services</h1>
-        <nav>
+        <img src="logo.png" alt="Quardstar Solid General Services Logo">
+        <button id="menu-btn" aria-label="Toggle navigation menu">☰</button>
+        <nav id="nav-menu">
+            <button id="close-btn" aria-label="Close navigation menu">✕</button>
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
-            <a href="Services.html">Services</a>
+            <a href="services.html">Services</a>
             <a href="products.html">Products</a>
             <a href="contact.html">Contact Us</a>
         </nav>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div>
-            <h2>About Us</h2>
-        </div>
-    </section>
 
     <!-- Company Overview Section -->
     <section>
@@ -196,19 +396,66 @@
     <section class="why-choose-us">
         <h2>Why Choose Us</h2>
         <ul>
-            <li>We offer high-quality, premium sesame seeds that meet international standards.</li>
+            <li>We offer high-quality, premium products that meet international standards.</li>
             <li>Our commitment to sustainability ensures that our practices benefit the environment and local communities.</li>
+            <li>We deal directly with the farmers, giving them assurance of acquiring their products and supporting them with fertilizers.</li>
             <li>We maintain full transparency throughout the export process, providing our clients with peace of mind.</li>
             <li>Our team is experienced and dedicated to delivering the best service to every customer.</li>
             <li>We are reliable and deliver products on time, ensuring customer satisfaction every time.</li>
         </ul>
     </section>
 
+    <!-- Vision Section -->
+    <section>
+        <h3>Our Vision</h3>
+        <p>
+            To be the leading Nigerian agricultural export company, recognized globally for quality and sustainability, while empowering local farmers through fair partnerships and driving economic growth within our communities.
+        </p>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <h3>Our Mission</h3>
+        <p>
+            To sustainably source and export high-quality Nigerian agricultural products, fostering mutually beneficial relationships with local farmers by providing fair prices, technical support, and access to global markets, thereby enhancing their livelihoods and contributing to Nigeria's agricultural prosperity.
+        </p>
+    </section>
+
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Quardstar Solid General Services. All rights reserved.</p>
+        <p>© 2025 Quardstar Solid General Services. All rights reserved.</p>
         <p>Follow us on: <a href="#">Facebook</a>, <a href="#">LinkedIn</a></p>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("menu-btn");
+            const navMenu = document.getElementById("nav-menu");
+            const navLinks = navMenu.querySelectorAll("a");
+            const closeBtn = document.getElementById("close-btn");
+
+            menuBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                navMenu.classList.toggle("active");
+            });
+
+            closeBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                navMenu.classList.remove("active");
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", function () {
+                    navMenu.classList.remove("active");
+                });
+            });
+
+            document.addEventListener("click", function (event) {
+                if (!menuBtn.contains(event.target) && !navMenu.contains(event.target)) {
+                    navMenu.classList.remove("active");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
