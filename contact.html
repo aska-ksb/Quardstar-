@@ -9,41 +9,129 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #E1F5FE; /* Soft light blue background */
-            color: #333;
+            background-color: #E6F4EA; /* Light green background */
+            color: #2C3E50; /* Dark green text color */
         }
 
         header {
-            background-color: #2980B9; /* Soft blue color for header */
+            background: linear-gradient(90deg, #2D6A4F 0%, #145A32 100%);
             color: white;
-            padding: 20px 0;
+            position: relative;
+            padding: 50px 40px 30px;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for elegance */
         }
 
         header h1 {
+            font-size: 2.4rem; /* Moderate, professional size */
             margin: 0;
-            font-size: 2.5rem;
+            color: #F8F9FA;
+            font-weight: 600; /* Slightly lighter for elegance */
+            text-transform: uppercase;
+            letter-spacing: 1px; /* Reduced for subtlety */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
-        nav a {
+        header img {
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            height: 100px;
+            background-color: transparent;
+            mix-blend-mode: multiply;
+            filter: brightness(1.2) contrast(1.1);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for logo */
+        }
+
+        #menu-btn {
+            font-size: 2.2rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        #menu-btn:hover {
+            color: #F8F9FA;
+            transform: scale(1.1);
+        }
+
+        #nav-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -50%;
+            width: 50%;
+            height: 100vh;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(26, 111, 46, 0.9) 100%);
+            z-index: 1000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: right 0.4s ease-in-out;
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px); /* Elegant blur effect */
+        }
+
+        #nav-menu.active {
+            display: flex;
+            right: 0;
+        }
+
+        #nav-menu a {
             color: white;
             text-decoration: none;
-            padding: 12px 20px;
-            margin: 0 15px;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 20px 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease, opacity 0.3s ease;
         }
 
-        nav a:hover {
-            background-color: #1F598B; /* Darker blue hover effect */
-            border-radius: 5px;
+        #nav-menu.active a {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .hero {
-            background-color: #2980B9; /* Soft blue color for the hero section */
+        #nav-menu a:nth-child(2) { transition-delay: 0.1s; }
+        #nav-menu a:nth-child(3) { transition-delay: 0.2s; }
+        #nav-menu a:nth-child(4) { transition-delay: 0.3s; }
+        #nav-menu a:nth-child(5) { transition-delay: 0.4s; }
+        #nav-menu a:nth-child(6) { transition-delay: 0.5s; }
+
+        #nav-menu a:hover {
+            color: #F8F9FA;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            transform: translateX(5px);
+        }
+
+        #close-btn {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            font-size: 2.2rem;
             color: white;
-            padding: 60px 20px;
-            text-align: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
+
+        #close-btn:hover {
+            color: #F8F9FA;
+            transform: scale(1.1);
+        }
+
+        
 
         .hero h2 {
             font-size: 3rem;
@@ -57,7 +145,7 @@
 
         h2 {
             font-size: 2rem;
-            color: #2980B9; /* Soft blue color for headings */
+            color: #145A32; /* Matching green color for section headings */
         }
 
         .contact-form {
@@ -98,7 +186,7 @@
         }
 
         footer {
-            background-color: #2980B9; /* Soft blue footer */
+            background-color: #145A32; /* Deep green footer */
             color: white;
             padding: 30px 20px;
             text-align: center;
@@ -114,13 +202,48 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        /* Mobile Navigation */
+        @media screen and (max-width: 768px) {
+            nav {
+                display: none;
+                width: 100%;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+            footer {
+                padding: 20px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
-
     <header>
         <h1>Quardstar Solid General Services</h1>
-        <nav>
+        <img src="logo.png" alt="Quardstar Solid General Services Logo">
+        <button id="menu-btn" aria-label="Toggle navigation menu">☰</button>
+        <nav id="nav-menu">
+            <button id="close-btn" aria-label="Close navigation menu">✕</button>
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="services.html">Services</a>
@@ -131,9 +254,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div>
-            <h2>Contact Us</h2>
-        </div>
+        <h2>Contact Us</h2>
     </section>
 
     <!-- Contact Form Section -->
@@ -152,9 +273,39 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Quardstar Solid General Services. All rights reserved.</p>
+        <p>© 2025 Quardstar Solid General Services. All rights reserved.</p>
         <p>Follow us on: <a href="#">Facebook</a>, <a href="#">LinkedIn</a></p>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("menu-btn");
+            const navMenu = document.getElementById("nav-menu");
+            const navLinks = navMenu.querySelectorAll("a");
+            const closeBtn = document.getElementById("close-btn");
+
+            menuBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                navMenu.classList.toggle("active");
+            });
+
+            closeBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                navMenu.classList.remove("active");
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", function () {
+                    navMenu.classList.remove("active");
+                });
+            });
+
+            document.addEventListener("click", function (event) {
+                if (!menuBtn.contains(event.target) && !navMenu.contains(event.target)) {
+                    navMenu.classList.remove("active");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
