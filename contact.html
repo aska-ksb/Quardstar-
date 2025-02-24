@@ -25,7 +25,7 @@
 
         header h1 {
             font-family: 'Georgia', serif; /* Match index page font */
-            font-size: 2.4rem; /* Moderate, professional size (unchanged) */
+            font-size: 2.4rem; /* Moderate, professional size (unchanged for desktop) */
             margin: 0;
             color: #F8F9FA;
             font-weight: 600; /* Slightly lighter for elegance (unchanged) */
@@ -132,7 +132,14 @@
             transform: scale(1.1);
         }
 
-        
+        /* Hero Section */
+        .hero {
+            background-color: #145A32; /* Green color for the hero section */
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
         .hero h2 {
             font-size: 3rem;
             margin: 0;
@@ -208,6 +215,32 @@
             nav {
                 display: none;
                 width: 100%;
+            }
+
+            header {
+                padding: 15px 20px; /* Reduced padding for mobile */
+                display: flex; /* Use flexbox for horizontal layout */
+                align-items: center; /* Vertically center items */
+                justify-content: space-between; /* Space between title and menu button */
+                text-align: center; /* Center the heading text for mobile */
+            }
+
+            header h1 {
+                font-size: 1.5rem; /* Reduced for mobile to fit smaller screens */
+                margin: 0;
+                flex: 1; /* Allow title to grow and shrink as needed */
+                text-align: center; /* Center the heading text */
+                padding: 0 10px; /* Add horizontal padding for better centering */
+            }
+
+            header img {
+                display: none; /* Hide logo on mobile */
+            }
+
+            #menu-btn, #close-btn {
+                font-size: 1.8rem;
+                position: static; /* Remove absolute positioning for flex layout */
+                margin-left: 10px; /* Add spacing between title and menu button */
             }
 
             .hero {
