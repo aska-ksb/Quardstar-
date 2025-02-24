@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Quardstar Solid General Services</title>
+    <title>Services - Quardstar Solid General Services</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #E6F4EA; /* Exotic light green background */
-            color: #2C3E50; /* Dark green text color */
+            background-color: #F4F8F1; /* Soft off-white with a green touch */
+            color: #2D4820; /* Dark green text */
         }
 
         header {
@@ -25,7 +25,7 @@
 
         header h1 {
             font-family: 'Georgia', serif; /* Match index page font */
-            font-size: 2.4rem; /* Moderate, professional size (unchanged) */
+            font-size: 2.4rem; /* Moderate, professional size (unchanged for desktop) */
             margin: 0;
             color: #F8F9FA;
             font-weight: 600; /* Slightly lighter for elegance (unchanged) */
@@ -134,7 +134,7 @@
 
         /* Hero Section */
         .hero {
-            background-color: #145A32; /* Green color for the hero section */
+            background-color: #2D6A4F; /* Exotic green */
             color: white;
             padding: 60px 20px;
             text-align: center;
@@ -152,17 +152,17 @@
 
         h2 {
             font-size: 2rem;
-            color: #145A32; /* Matching green color for section headings */
+            color: #2D6A4F; /* Exotic green color for headings */
         }
 
-        .products-list {
+        .services-list {
             display: flex;
             justify-content: space-evenly;
             margin-top: 40px;
             flex-wrap: wrap;
         }
 
-        .product-box {
+        .service-box {
             width: 45%;
             background-color: #fff;
             padding: 30px;
@@ -173,22 +173,22 @@
             margin-bottom: 30px;
         }
 
-        .product-box:hover {
+        .service-box:hover {
             transform: scale(1.05);
         }
 
-        .product-box h3 {
-            color: #E74C3C; /* Soft red color for product titles */
+        .service-box h3 {
+            color: #A63F2F; /* Soft red for service titles */
             font-size: 1.8rem;
         }
 
-        .product-box p {
+        .service-box p {
             font-size: 1.1rem;
-            color: #7f8c8d;
+            color: #435334; /* Dark grey for text */
         }
 
         footer {
-            background-color: #145A32; /* Deep green footer */
+            background-color: #2D6A4F; /* Exotic green footer */
             color: white;
             padding: 30px 20px;
             text-align: center;
@@ -196,7 +196,7 @@
         }
 
         footer a {
-            color: #E74C3C; /* Soft red color for footer links */
+            color: #A63F2F; /* Soft red color for footer links */
             text-decoration: none;
             font-weight: bold;
         }
@@ -205,41 +205,36 @@
             text-decoration: underline;
         }
 
-        /* Mobile Navigation */
         @media screen and (max-width: 768px) {
-            nav {
-                display: none;
-                width: 100%;
+            header {
+                padding: 15px 20px; /* Reduced padding for mobile */
+                display: flex; /* Use flexbox for horizontal layout */
+                align-items: center; /* Vertically center items */
+                justify-content: space-between; /* Space between title and menu button */
+                text-align: center; /* Center the heading text for mobile */
             }
 
-            .hero {
-                padding: 40px 20px;
+            header h1 {
+                font-size: 1.5rem; /* Reduced for mobile to fit smaller screens */
+                margin: 0;
+                flex: 1; /* Allow title to grow and shrink as needed */
+                text-align: center; /* Center the heading text */
+                padding: 0 10px; /* Add horizontal padding for better centering */
             }
 
-            .hero h2 {
-                font-size: 2.5rem;
+            header img {
+                display: none; /* Hide logo on mobile */
             }
 
-            section {
-                padding: 40px 20px;
-            }
-
-            h2 {
+            #menu-btn, #close-btn {
                 font-size: 1.8rem;
+                position: static; /* Remove absolute positioning for flex layout */
+                margin-left: 10px; /* Add spacing between title and menu button */
             }
 
-            .products-list {
-                flex-direction: column;
-            }
-
-            .product-box {
+            .service-box {
                 width: 100%;
                 margin-bottom: 20px;
-            }
-
-            footer {
-                padding: 20px;
-                font-size: 0.9rem;
             }
         }
     </style>
@@ -259,32 +254,20 @@
         </nav>
     </header>
 
-    <!-- Products Section -->
+    <!-- Services Section -->
     <section>
-        <h2>Our Premium Products</h2>
-        <div class="products-list">
-            <!-- Product 1 -->
-            <div class="product-box">
-                <h3>Premium Hulled Sesame Seeds</h3>
-                <p>Our premium hulled sesame seeds are of the highest quality, carefully sourced and processed to meet international standards for export.</p>
+        <h2>What We Offer</h2>
+        <div class="services-list">
+            <!-- Service 1 -->
+            <div class="service-box">
+                <h3>Sesame Seed and Hibiscus Flower Export</h3>
+                <p>We provide premium, high-quality sesame seeds and dried Hibiscus flower sourced from Nigeria, ensuring timely delivery to global markets.</p>
             </div>
 
-            <!-- Product 2 -->
-            <div class="product-box">
-                <h3>Organic Sesame Seeds</h3>
-                <p>We offer organic sesame seeds grown without chemicals, providing a healthier option for customers seeking eco-friendly products.</p>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-box">
-                <h3>Raw Sesame Seeds</h3>
-                <p>We provide high-quality raw sesame seeds carefully sourced for our partners to refine in their facilities depending on its purpose.</p>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-box">
-                <h3>Hibiscus Flower</h3>
-                <p>We offer high-quality dried hibiscus flower grown in the northern part of Nigeria.</p>
+            <!-- Service 2 -->
+            <div class="service-box">
+                <h3>Consultation Services</h3>
+                <p>We offer consultation services for agricultural businesses, providing insights into market trends, export regulations, and best practices.</p>
             </div>
         </div>
     </section>
