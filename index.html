@@ -279,31 +279,23 @@
 
         @media screen and (max-width: 768px) {
             header {
-                padding: 15px 20px; /* Reduced padding for mobile */
-                display: flex; /* Use flexbox for horizontal layout */
-                align-items: center; /* Vertically center items */
-                justify-content: space-between; /* Space between logo, title, and menu button */
-                text-align: center; /* Center the heading text for mobile */
+                padding: 30px 20px 20px;
             }
 
             header h1 {
-                font-size: 1.5rem; /* Reduced further for mobile to fit beside logo */
-                margin: 0;
-                flex: 1; /* Allow title to grow and shrink as needed */
-                text-align: center; /* Center the heading text */
-                padding: 0 10px; /* Add horizontal padding for better centering */
+                font-size: 1.8rem; /* Reduced for mobile, still professional */
             }
 
             header img {
-                height: 60px; /* Reduced logo size for mobile */
-                position: static; /* Remove absolute positioning for flex layout */
-                margin-right: 0; /* Remove margin to push logo to extreme left */
+                height: 80px;
+                top: 15px;
+                left: 20px;
             }
 
             #menu-btn, #close-btn {
                 font-size: 1.8rem;
-                position: static; /* Remove absolute positioning for flex layout */
-                margin-left: 0; /* Remove margin to push menu button to extreme right */
+                top: 15px;
+                right: 20px;
             }
 
             .hero {
@@ -368,7 +360,7 @@
 <body>
     <header>
         <h1>Quardstar Solid General Services</h1>
-        <img src="images/logo.png" alt="Quardstar Solid General Services Logo">
+        <img src="images/" alt="Quardstar Solid General Services Logo">
         <button id="menu-btn" aria-label="Toggle navigation menu">☰</button>
         <nav id="nav-menu">
             <button id="close-btn" aria-label="Close navigation menu">✕</button>
