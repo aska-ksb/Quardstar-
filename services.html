@@ -206,35 +206,30 @@
         }
 
         @media screen and (max-width: 768px) {
-            nav {
-                display: none;
-                width: 100%;
+            header {
+                padding: 15px 20px; /* Reduced padding for mobile */
+                display: flex; /* Use flexbox for horizontal layout */
+                align-items: center; /* Vertically center items */
+                justify-content: space-between; /* Space between title and menu button */
+                text-align: center; /* Center the heading text for mobile */
             }
 
-            .nav-links.active {
-                display: block;
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                background-color: #2D6A4F;
-                padding: 20px;
-                border-radius: 8px;
+            header h1 {
+                font-size: 1.8rem; /* Reduced for mobile, still professional */
+                margin: 0;
+                flex: 1; /* Allow title to grow and shrink as needed */
+                text-align: center; /* Center the heading text */
+                padding: 0 10px; /* Add horizontal padding for better centering */
             }
 
-            .nav-links a {
-                color: white;
-                text-decoration: none;
-                padding: 10px;
-                background-color: transparent;
-                margin: 10px 0;
+            header img {
+                display: none; /* Hide logo on mobile */
             }
 
-            .nav-links a:hover {
-                background-color: #1B4D33;
-            }
-
-            .nav-links a:active {
-                background-color: #A3C293;
+            #menu-btn, #close-btn {
+                font-size: 1.8rem;
+                position: static; /* Remove absolute positioning for flex layout */
+                margin-left: 10px; /* Add spacing between title and menu button */
             }
 
             .service-box {
