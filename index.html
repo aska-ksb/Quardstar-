@@ -291,18 +291,19 @@
                 margin: 0;
                 flex: 1; /* Allow title to grow and shrink as needed */
                 text-align: center; /* Center the heading text */
+                padding: 0 10px; /* Add horizontal padding for better centering */
             }
 
             header img {
                 height: 60px; /* Reduced logo size for mobile */
                 position: static; /* Remove absolute positioning for flex layout */
-                margin-right: 10px; /* Add spacing between logo and title */
+                margin-right: 0; /* Remove margin to push logo to extreme left */
             }
 
             #menu-btn, #close-btn {
                 font-size: 1.8rem;
                 position: static; /* Remove absolute positioning for flex layout */
-                margin-left: 10px; /* Add spacing between title and menu button */
+                margin-left: 0; /* Remove margin to push menu button to extreme right */
             }
 
             .hero {
