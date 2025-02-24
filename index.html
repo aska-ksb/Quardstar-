@@ -279,23 +279,30 @@
 
         @media screen and (max-width: 768px) {
             header {
-                padding: 30px 20px 20px;
+                padding: 15px 20px; /* Reduced padding for mobile */
+                display: flex; /* Use flexbox for horizontal layout */
+                align-items: center; /* Vertically center items */
+                justify-content: space-between; /* Space between logo, title, and menu button */
+                text-align: left; /* Align text to the left for mobile */
             }
 
             header h1 {
-                font-size: 1.8rem; /* Reduced for mobile, still professional */
+                font-size: 1.5rem; /* Reduced further for mobile to fit beside logo */
+                margin: 0;
+                flex: 1; /* Allow title to grow and shrink as needed */
+                padding-left: 10px; /* Add spacing between logo and title */
             }
 
             header img {
-                height: 80px;
-                top: 15px;
-                left: 20px;
+                height: 60px; /* Reduced logo size for mobile */
+                position: static; /* Remove absolute positioning for flex layout */
+                margin-right: 10px; /* Add spacing between logo and title */
             }
 
             #menu-btn, #close-btn {
                 font-size: 1.8rem;
-                top: 15px;
-                right: 20px;
+                position: static; /* Remove absolute positioning for flex layout */
+                margin-left: 10px; /* Add spacing between title and menu button */
             }
 
             .hero {
