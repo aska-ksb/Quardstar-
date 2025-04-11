@@ -3,81 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Quardstar Solid General Services</title>
+    <title>Products - Quardstar Solid General Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #F4F8F1; /* Soft off-white with a green touch */
-            color: #2D4820; /* Dark green text */
+        }
+
+        body {
+            font-family: 'Roboto', 'Open Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            color: #333333;
         }
 
         header {
-            background: linear-gradient(90deg, #2D6A4F 0%, #145A32 100%);
-            color: white;
-            position: relative;
-            padding: 50px 40px 30px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for elegance */
+            background-color: #FFFFFF;
+            color: #2E7D32;
+            position: sticky;
+            top: 0;
+            padding: 20px 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         header h1 {
-            font-family: 'Georgia', serif; /* Match index page font */
-            font-size: 2.4rem; /* Moderate, professional size (unchanged for desktop) */
-            margin: 0;
-            color: #F8F9FA;
-            font-weight: 600; /* Slightly lighter for elegance (unchanged) */
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2E7D32;
             text-transform: uppercase;
-            letter-spacing: 1px; /* Reduced for subtlety (unchanged) */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
         }
 
         header img {
-            position: absolute;
-            top: 20px;
-            left: 40px;
-            height: 100px;
-            background-color: transparent;
-            mix-blend-mode: multiply;
-            filter: brightness(1.2) contrast(1.1);
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for logo */
+            height: 60px;
+            border-radius: 5px;
         }
 
         #menu-btn {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             background: none;
             border: none;
-            color: white;
+            color: #2E7D32;
             cursor: pointer;
-            position: absolute;
-            top: 25px;
-            right: 40px;
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         #menu-btn:hover {
-            color: #F8F9FA;
-            transform: scale(1.1);
+            color: #4CAF50;
         }
 
         #nav-menu {
             display: none;
             position: fixed;
             top: 0;
-            right: -50%;
-            width: 50%;
+            right: -100%;
+            width: 100%;
             height: 100vh;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(26, 111, 46, 0.9) 100%);
-            z-index: 1000;
+            background-color: rgba(46, 125, 50, 0.95);
+            z-index: 1001;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transition: right 0.4s ease-in-out;
-            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(5px); /* Elegant blur effect */
+            transition: right 0.3s ease-in-out;
         }
 
         #nav-menu.active {
@@ -86,163 +81,165 @@
         }
 
         #nav-menu a {
-            color: white;
+            color: #FFFFFF;
             text-decoration: none;
-            font-size: 1.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            padding: 20px 30px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s ease, opacity 0.3s ease;
+            font-size: 1.5rem;
+            font-weight: 500;
+            padding: 15px 30px;
+            transition: background-color 0.3s ease;
         }
-
-        #nav-menu.active a {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        #nav-menu a:nth-child(2) { transition-delay: 0.1s; }
-        #nav-menu a:nth-child(3) { transition-delay: 0.2s; }
-        #nav-menu a:nth-child(4) { transition-delay: 0.3s; }
-        #nav-menu a:nth-child(5) { transition-delay: 0.4s; }
-        #nav-menu a:nth-child(6) { transition-delay: 0.5s; }
 
         #nav-menu a:hover {
-            color: #F8F9FA;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 8px;
-            transform: translateX(5px);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
         }
 
         #close-btn {
             position: absolute;
-            top: 25px;
-            right: 40px;
-            font-size: 2.2rem;
-            color: white;
+            top: 20px;
+            right: 30px;
+            font-size: 1.8rem;
+            color: #FFFFFF;
             background: none;
             border: none;
             cursor: pointer;
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         #close-btn:hover {
-            color: #F8F9FA;
-            transform: scale(1.1);
-        }
-
-        /* Hero Section */
-        .hero {
-            background-color: #2D6A4F; /* Exotic green */
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 3rem;
-            margin: 0;
+            color: #F5F5F5;
         }
 
         section {
-            padding: 60px 20px;
+            padding: 40px 40px; /* Adjusted from 60px 40px to reduce top space */
+            max-width: 1200px;
+            margin: 0 auto;
             text-align: center;
         }
 
         h2 {
             font-size: 2rem;
-            color: #2D6A4F; /* Exotic green color for headings */
+            color: #2E7D32;
+            font-weight: 700;
+            margin-bottom: 20px; /* Reduced from 30px for tighter spacing */
+            letter-spacing: 0.5px;
         }
 
-        .services-list {
-            display: flex;
-            justify-content: space-evenly;
-            margin-top: 40px;
-            flex-wrap: wrap;
+        .products-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Changed to 2 columns per row */
+            gap: 30px;
+            margin-top: 30px; /* Reduced from 40px for tighter spacing */
         }
 
-        .service-box {
-            width: 45%;
-            background-color: #fff;
+        .product-box {
+            background-color: #FFFFFF;
             padding: 30px;
-            text-align: center;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #2E7D32;
         }
 
-        .service-box:hover {
-            transform: scale(1.05);
+        .product-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .service-box h3 {
-            color: #A63F2F; /* Soft red for service titles */
-            font-size: 1.8rem;
+        .product-box h3 {
+            color: #2E7D32;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
 
-        .service-box p {
-            font-size: 1.1rem;
-            color: #435334; /* Dark grey for text */
-        }
-
-        footer {
-            background-color: #2D6A4F; /* Exotic green footer */
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
+        .product-box p {
+            color: #555555;
             font-size: 1rem;
         }
 
+        footer {
+            background-color: #2E7D32;
+            color: #FFFFFF;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
         footer a {
-            color: #A63F2F; /* Soft red color for footer links */
+            color: #F5F5F5;
             text-decoration: none;
-            font-weight: bold;
+            margin: 0 10px;
+            transition: color 0.3s ease;
         }
 
         footer a:hover {
+            color: #FFFFFF;
             text-decoration: underline;
         }
 
         @media screen and (max-width: 768px) {
             header {
-                padding: 15px 20px; /* Reduced padding for mobile */
-                display: flex; /* Use flexbox for horizontal layout */
-                align-items: center; /* Vertically center items */
-                justify-content: space-between; /* Space between title and menu button */
-                text-align: center; /* Center the heading text for mobile */
+                padding: 15px 20px;
             }
 
             header h1 {
-                font-size: 1.5rem; /* Reduced for mobile to fit smaller screens */
-                margin: 0;
-                flex: 1; /* Allow title to grow and shrink as needed */
-                text-align: center; /* Center the heading text */
-                padding: 0 10px; /* Add horizontal padding for better centering */
+                font-size: 1.5rem;
             }
 
             header img {
-                display: none; /* Hide logo on mobile */
+                height: 50px;
+            }
+
+            section {
+                padding: 30px 20px; /* Reduced from 40px for mobile */
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .products-list {
+                grid-template-columns: 1fr; /* 1 column on mobile for simplicity */
+                margin-top: 20px; /* Reduced from 30px for mobile */
+            }
+
+            .product-box {
+                padding: 20px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            #nav-menu {
+                display: flex !important;
+                position: static;
+                width: auto;
+                height: auto;
+                background: none;
+                flex-direction: row;
+                gap: 20px;
+            }
+
+            #nav-menu a {
+                font-size: 1rem;
+                padding: 10px 15px;
+                color: #2E7D32;
+            }
+
+            #nav-menu a:hover {
+                background-color: #F5F5F5;
             }
 
             #menu-btn, #close-btn {
-                font-size: 1.8rem;
-                position: static; /* Remove absolute positioning for flex layout */
-                margin-left: 10px; /* Add spacing between title and menu button */
-            }
-
-            .service-box {
-                width: 100%;
-                margin-bottom: 20px;
+                display: none;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Quardstar Solid General Services</h1>
         <img src="images/logo.png" alt="Quardstar Solid General Services Logo">
+        <h1>Quardstar Solid General Services</h1>
         <button id="menu-btn" aria-label="Toggle navigation menu">☰</button>
         <nav id="nav-menu">
             <button id="close-btn" aria-label="Close navigation menu">✕</button>
@@ -254,20 +251,32 @@
         </nav>
     </header>
 
-    <!-- Services Section -->
+    <!-- Products Section -->
     <section>
-        <h2>What We Offer</h2>
-        <div class="services-list">
-            <!-- Service 1 -->
-            <div class="service-box">
-                <h3>Sesame Seed and Hibiscus Flower Export</h3>
-                <p>We provide premium, high-quality sesame seeds and dried Hibiscus flower sourced from Nigeria, ensuring timely delivery to global markets.</p>
+        <h2>Our Premium Products</h2>
+        <div class="products-list">
+            <!-- Product 1 -->
+            <div class="product-box">
+                <h3>Premium Hulled Sesame Seeds</h3>
+                <p>Our premium hulled sesame seeds are of the highest quality, carefully sourced and processed to meet international standards for export.</p>
             </div>
 
-            <!-- Service 2 -->
-            <div class="service-box">
-                <h3>Consultation Services</h3>
-                <p>We offer consultation services for agricultural businesses, providing insights into market trends, export regulations, and best practices.</p>
+            <!-- Product 2 -->
+            <div class="product-box">
+                <h3>Organic Sesame Seeds</h3>
+                <p>We offer organic sesame seeds grown without chemicals, providing a healthier option for customers seeking eco-friendly products.</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-box">
+                <h3>Raw Sesame Seeds</h3>
+                <p>We provide high-quality raw sesame seeds carefully sourced for our partners to refine in their facilities depending on its purpose.</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-box">
+                <h3>Hibiscus Flower</h3>
+                <p>We offer high-quality dried hibiscus flower grown in the northern part of Nigeria.</p>
             </div>
         </div>
     </section>
@@ -275,7 +284,7 @@
     <!-- Footer Section -->
     <footer>
         <p>© 2025 Quardstar Solid General Services. All rights reserved.</p>
-        <p>Follow us on: <a href="#">Facebook</a>, <a href="#">LinkedIn</a></p>
+        <p>Follow us: <a href="#">Facebook</a> | <a href="#">LinkedIn</a></p>
     </footer>
 
     <script>
