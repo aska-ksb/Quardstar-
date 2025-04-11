@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quardstar Solid General Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -12,78 +13,66 @@
         }
 
         body {
-            font-family: 'Georgia', serif; /* Elegant serif font for sophistication */
-            line-height: 1.7;
+            font-family: 'Roboto', 'Open Sans', sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #F5F9F7 0%, #E6F4EA 100%); /* Subtle elegant gradient */
-            color: #2C3E50;
+            background-color: #FFFFFF;
+            color: #333333;
         }
 
         header {
-            background: linear-gradient(90deg, #2D6A4F 0%, #145A32 100%);
-            color: white;
-            position: relative;
-            padding: 50px 40px 30px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for elegance */
+            background-color: #FFFFFF;
+            color: #2E7D32;
+            position: sticky;
+            top: 0;
+            padding: 20px 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         header h1 {
-            font-size: 2.4rem; /* Reduced for a moderate, professional size */
-            margin: 0;
-            color: #F8F9FA;
-            font-weight: 600; /* Slightly lighter for elegance */
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2E7D32;
             text-transform: uppercase;
-            letter-spacing: 1px; /* Reduced for subtlety */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
         }
 
         header img {
-            position: absolute;
-            top: 20px;
-            left: 40px;
-            height: 100px;
-            background-color: transparent;
-            mix-blend-mode: multiply;
-            filter: brightness(1.2) contrast(1.1);
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for logo */
+            height: 60px;
+            border-radius: 5px;
         }
 
         #menu-btn {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             background: none;
             border: none;
-            color: white;
+            color: #2E7D32;
             cursor: pointer;
-            position: absolute;
-            top: 25px;
-            right: 40px;
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         #menu-btn:hover {
-            color: #F8F9FA;
-            transform: scale(1.1);
+            color: #4CAF50;
         }
 
         #nav-menu {
             display: none;
             position: fixed;
             top: 0;
-            right: -50%;
-            width: 50%;
+            right: -100%;
+            width: 100%;
             height: 100vh;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(26, 111, 46, 0.9) 100%);
-            z-index: 1000;
+            background-color: rgba(46, 125, 50, 0.95);
+            z-index: 1001;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transition: right 0.4s ease-in-out;
-            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(5px); /* Elegant blur effect */
+            transition: right 0.3s ease-in-out;
         }
 
         #nav-menu.active {
@@ -92,281 +81,257 @@
         }
 
         #nav-menu a {
-            color: white;
+            color: #FFFFFF;
             text-decoration: none;
-            font-size: 1.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            padding: 20px 30px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s ease, opacity 0.3s ease;
+            font-size: 1.5rem;
+            font-weight: 500;
+            padding: 15px 30px;
+            transition: background-color 0.3s ease;
         }
-
-        #nav-menu.active a {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        #nav-menu a:nth-child(2) { transition-delay: 0.1s; }
-        #nav-menu a:nth-child(3) { transition-delay: 0.2s; }
-        #nav-menu a:nth-child(4) { transition-delay: 0.3s; }
-        #nav-menu a:nth-child(5) { transition-delay: 0.4s; }
-        #nav-menu a:nth-child(6) { transition-delay: 0.5s; }
 
         #nav-menu a:hover {
-            color: #F8F9FA;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 8px;
-            transform: translateX(5px);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
         }
 
         #close-btn {
             position: absolute;
-            top: 25px;
-            right: 40px;
-            font-size: 2.2rem;
-            color: white;
+            top: 20px;
+            right: 30px;
+            font-size: 1.8rem;
+            color: #FFFFFF;
             background: none;
             border: none;
             cursor: pointer;
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         #close-btn:hover {
-            color: #F8F9FA;
-            transform: scale(1.1);
+            color: #F5F5F5;
         }
 
         .hero {
-            background: url('path/to/real-image.jpg') no-repeat center center;
-            background-size: cover;
-            height: 600px;
+            background: #FFFFFF;
+            min-height: 500px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
             text-align: center;
-            color: white;
-            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.3);
-            padding-top: 80px;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Elegant border */
+            color: #FFFFFF;
+            padding: 40px;
         }
 
         .hero h2 {
-            font-size: 2.2rem; /* Reduced for a moderate, professional size */
-            margin: 0 0 30px 0;
-            z-index: 1;
-            font-weight: 600; /* Slightly lighter for elegance */
-            text-transform: uppercase;
-            letter-spacing: 1px; /* Reduced for subtlety */
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            background-color: #FFFFFF;
+            color: #333333;
+            padding: 10px 20px;
+            border-radius: 5px;
         }
 
         .hero-images {
             display: flex;
-            justify-content: space-between;
-            width: 100%;
-            height: 420px;
-            margin-top: 0;
-            padding: 0 20px;
-            box-sizing: border-box;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .hero-images img {
-            width: 50%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 0;
-            box-shadow: none;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
+            width: 400px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-right: 1px solid #E0E0E0;
+        }
+
+        .hero-images img:last-child {
+            border-right: none;
         }
 
         section {
-            padding: 100px 40px;
-            text-align: center;
+            padding: 80px 40px;
             max-width: 1200px;
             margin: 0 auto;
-            border-bottom: 1px solid rgba(74, 108, 87, 0.1); /* Subtle elegant divider */
+            text-align: center;
         }
 
         h2 {
-            font-size: 2.5rem;
-            color: #1A6F2E;
+            font-size: 2rem;
+            color: #2E7D32;
             font-weight: 700;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
         }
 
         .about-text {
-            font-size: 1.4rem;
-            line-height: 2;
-            color: #4A6C57;
-            max-width: 900px;
-            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555555;
+            background-color: #FFFFFF;
             padding: 30px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            border: 2px solid rgba(26, 111, 46, 0.2); /* Elegant border */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .services {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 50px;
-            gap: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .service-box {
-            width: 30%;
-            background: linear-gradient(135deg, #ffffff 0%, #F5F9F7 100%);
+            background-color: #FFFFFF;
             padding: 30px;
-            text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-            border: 2px solid rgba(26, 111, 46, 0.1); /* Subtle border for elegance */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #2E7D32;
         }
 
         .service-box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
 
         .service-box h3 {
-            color: #1A6F2E;
-            font-size: 2rem;
+            color: #2E7D32;
+            font-size: 1.5rem;
             font-weight: 600;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+            margin-bottom: 15px;
         }
 
         .service-box p {
-            font-size: 1.2rem;
-            color: #4A6C57;
-            padding: 15px;
+            color: #555555;
+            font-size: 1rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: #2E7D32;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #4CAF50;
         }
 
         footer {
-            background: linear-gradient(90deg, #145A32 0%, #1A6F2E 100%);
-            color: white;
-            padding: 50px 40px;
+            background-color: #2E7D32;
+            color: #FFFFFF;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 1.2rem;
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-            border-top: 2px solid rgba(255, 255, 255, 0.2); /* Elegant border */
+            font-size: 0.9rem;
         }
 
         footer a {
-            color: #F8F9FA;
+            color: #F5F5F5;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
+            margin: 0 10px;
+            transition: color 0.3s ease;
         }
 
         footer a:hover {
-            color: #ffffff;
+            color: #FFFFFF;
             text-decoration: underline;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
 
         @media screen and (max-width: 768px) {
             header {
-                padding: 15px 20px; /* Reduced padding for mobile */
-                display: flex; /* Use flexbox for horizontal layout */
-                align-items: center; /* Vertically center items */
-                justify-content: space-between; /* Space between title and menu button */
-                text-align: center; /* Center the heading text for mobile */
+                padding: 15px 20px;
             }
 
             header h1 {
-                font-size: 1.5rem; /* Reduced further for mobile to fit */
-                margin: 0;
-                flex: 1; /* Allow title to grow and shrink as needed */
-                text-align: center; /* Center the heading text */
-                padding: 0 10px; /* Add horizontal padding for better centering */
+                font-size: 1.5rem;
             }
 
             header img {
-                display: none; /* Hide logo on mobile */
-            }
-
-            #menu-btn, #close-btn {
-                font-size: 1.8rem;
-                position: static; /* Remove absolute positioning for flex layout */
-                margin-left: 10px; /* Add spacing between title and menu button */
+                height: 50px;
             }
 
             .hero {
-                height: 400px;
-                padding-top: 50px;
+                min-height: 400px;
+                padding: 20px;
             }
 
             .hero h2 {
-                font-size: 1.8rem; /* Reduced for mobile, professional and moderate */
-            }
-
-            .hero-images {
-                height: 250px;
-                padding: 0 10px;
+                font-size: 1.8rem;
             }
 
             .hero-images img {
                 width: 100%;
-                height: 125px;
+                max-width: 300px;
+                height: 180px;
+                border-right: none;
+                border-bottom: 1px solid #E0E0E0;
+            }
+
+            .hero-images img:last-child {
+                border-bottom: none;
             }
 
             section {
-                padding: 60px 20px;
+                padding: 40px 20px;
             }
 
             h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .about-text {
-                font-size: 1.1rem;
                 padding: 20px;
-                border-radius: 10px;
-            }
-
-            .services {
-                flex-direction: column;
-                gap: 20px;
             }
 
             .service-box {
-                width: 100%;
                 padding: 20px;
-                border-radius: 10px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            #nav-menu {
+                display: flex !important;
+                position: static;
+                width: auto;
+                height: auto;
+                background: none;
+                flex-direction: row;
+                gap: 20px;
             }
 
-            .service-box h3 {
-                font-size: 1.6rem;
-            }
-
-            .service-box p {
+            #nav-menu a {
                 font-size: 1rem;
+                padding: 10px 15px;
+                color: #2E7D32;
             }
 
-            footer {
-                padding: 30px 20px;
-                font-size: 1rem;
+            #nav-menu a:hover {
+                background-color: #F5F5F5;
+            }
+
+            #menu-btn, #close-btn {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Quardstar Solid General Services</h1>
         <img src="images/logo.png" alt="Quardstar Solid General Services Logo">
+        <h1>Quardstar Solid General Services</h1>
         <button id="menu-btn" aria-label="Toggle navigation menu">☰</button>
         <nav id="nav-menu">
             <button id="close-btn" aria-label="Close navigation menu">✕</button>
@@ -379,17 +344,17 @@
     </header>
 
     <section class="hero">
-        <h2>Exporting Premium products from Nigeria</h2>
+        <h2>Exporting Premium Products from Nigeria</h2>
         <div class="hero-images">
-            <img src="images/sesame pic.jpg" alt="Sesame seeds in warehouse 1">
-            <img src="images/zobo pic.jpg" alt="Sesame seeds in warehouse 2">
+            <img src="images/sesame pic.jpg" alt="Sesame seeds in warehouse">
+            <img src="images/zobo pic.jpg" alt="Hibiscus flowers">
         </div>
     </section>
 
     <section>
         <h2>About Us</h2>
         <p class="about-text">
-            Quardstar Solid General Services, a subsidiary of Quardstar Group is a leading Nigerian company specializing in the export of top-quality sesame seeds and hibiscus flower from Nigeria to international markets. We ensure our clients receive the highest standards of product quality, reliability, and customer service while supporting sustainable agricultural practices.
+            Quardstar Solid General Services, a subsidiary of Quardstar Group, is a leading Nigerian company specializing in the export of top-quality sesame seeds and hibiscus flowers to international markets. We ensure our clients receive the highest standards of product quality, reliability, and customer service while supporting sustainable agricultural practices.
         </p>
     </section>
 
@@ -397,8 +362,8 @@
         <h2>Our Services</h2>
         <div class="services">
             <div class="service-box">
-                <h3>Sesame Seed & Hibiscus Flower Export</h3>
-                <p>We export premium sesame seeds and dried hibiscus flower that meet international standards, offering a reliable and high-quality supply chain.</p>
+                <h3>Sesame Seed & Hibiscus Export</h3>
+                <p>We export premium sesame seeds and dried hibiscus flowers that meet international standards, offering a reliable and high-quality supply chain.</p>
             </div>
             <div class="service-box">
                 <h3>Logistics & Delivery</h3>
@@ -413,12 +378,13 @@
 
     <section>
         <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:info@quardstarsolid.com">info@quardstarsolid.com</a></p>
+        <p>Reach out to us for inquiries or partnerships.</p>
+        <a href="mailto:info@quardstarsolid.com" class="contact-btn">Email Us</a>
     </section>
 
     <footer>
         <p>© 2025 Quardstar Solid General Services. All rights reserved.</p>
-        <p>Follow us on: <a href="#">Facebook</a>, <a href="#">LinkedIn</a></p>
+        <p>Follow us: <a href="#">Facebook</a> | <a href="#">LinkedIn</a></p>
     </footer>
 
     <script>
