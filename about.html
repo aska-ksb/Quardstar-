@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Quardstar Solid General Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -12,78 +13,66 @@
         }
 
         body {
-            font-family: 'Georgia', serif; /* Elegant serif font for sophistication */
-            line-height: 1.7;
+            font-family: 'Roboto', 'Open Sans', sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #F5F9F7 0%, #E6F4EA 100%); /* Subtle elegant gradient */
-            color: #2C3E50;
+            background-color: #FFFFFF;
+            color: #333333;
         }
 
         header {
-            background: linear-gradient(90deg, #2D6A4F 0%, #145A32 100%);
-            color: white;
-            position: relative;
-            padding: 50px 40px 30px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for elegance */
+            background-color: #FFFFFF;
+            color: #2E7D32;
+            position: sticky;
+            top: 0;
+            padding: 20px 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         header h1 {
-            font-size: 2.4rem; /* Moderate, professional size */
-            margin: 0;
-            color: #F8F9FA;
-            font-weight: 600; /* Slightly lighter for elegance */
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2E7D32;
             text-transform: uppercase;
-            letter-spacing: 1px; /* Reduced for subtlety */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
         }
 
         header img {
-            position: absolute;
-            top: 20px;
-            left: 40px;
-            height: 100px;
-            background-color: transparent;
-            mix-blend-mode: multiply;
-            filter: brightness(1.2) contrast(1.1);
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for logo */
+            height: 60px;
+            border-radius: 5px;
         }
 
         #menu-btn {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             background: none;
             border: none;
-            color: white;
+            color: #2E7D32;
             cursor: pointer;
-            position: absolute;
-            top: 25px;
-            right: 40px;
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         #menu-btn:hover {
-            color: #F8F9FA;
-            transform: scale(1.1);
+            color: #4CAF50;
         }
 
         #nav-menu {
             display: none;
             position: fixed;
             top: 0;
-            right: -50%;
-            width: 50%;
+            right: -100%;
+            width: 100%;
             height: 100vh;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(26, 111, 46, 0.9) 100%);
-            z-index: 1000;
+            background-color: rgba(46, 125, 50, 0.95);
+            z-index: 1001;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transition: right 0.4s ease-in-out;
-            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(5px); /* Elegant blur effect */
+            transition: right 0.3s ease-in-out;
         }
 
         #nav-menu.active {
@@ -92,274 +81,224 @@
         }
 
         #nav-menu a {
-            color: white;
+            color: #FFFFFF;
             text-decoration: none;
-            font-size: 1.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            padding: 20px 30px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s ease, opacity 0.3s ease;
+            font-size: 1.5rem;
+            font-weight: 500;
+            padding: 15px 30px;
+            transition: background-color 0.3s ease;
         }
-
-        #nav-menu.active a {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        #nav-menu a:nth-child(2) { transition-delay: 0.1s; }
-        #nav-menu a:nth-child(3) { transition-delay: 0.2s; }
-        #nav-menu a:nth-child(4) { transition-delay: 0.3s; }
-        #nav-menu a:nth-child(5) { transition-delay: 0.4s; }
-        #nav-menu a:nth-child(6) { transition-delay: 0.5s; }
 
         #nav-menu a:hover {
-            color: #F8F9FA;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 8px;
-            transform: translateX(5px);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
         }
 
         #close-btn {
             position: absolute;
-            top: 25px;
-            right: 40px;
-            font-size: 2.2rem;
-            color: white;
+            top: 20px;
+            right: 30px;
+            font-size: 1.8rem;
+            color: #FFFFFF;
             background: none;
             border: none;
             cursor: pointer;
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         #close-btn:hover {
-            color: #F8F9FA;
-            transform: scale(1.1);
+            color: #F5F5F5;
         }
 
         section {
-            padding: 100px 40px;
-            text-align: center;
+            padding: 80px 40px;
             max-width: 1200px;
             margin: 0 auto;
-            border-bottom: 1px solid rgba(74, 108, 87, 0.1); /* Subtle elegant divider */
+            text-align: center;
         }
 
-        h2 {
-            font-size: 2.5rem;
-            color: #1A6F2E;
+        h2, section h3 {
+            font-size: 2rem;
+            color: #2E7D32;
             font-weight: 700;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
         }
 
         .about-text, section p {
-            font-size: 1.4rem;
-            line-height: 2;
-            color: #4A6C57;
-            max-width: 900px;
-            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555555;
+            background-color: #FFFFFF;
             padding: 30px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            border: 2px solid rgba(26, 111, 46, 0.2); /* Elegant border */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .our-values {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 50px;
-            gap: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .value-box {
-            width: 30%;
-            background: linear-gradient(135deg, #F0F8F3 0%, #E6F4EA 100%); /* Light green shade complementing the page */
+            background-color: #FFFFFF;
             padding: 30px;
-            text-align: center; /* Center the text horizontally */
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-            border: 2px solid rgba(26, 111, 46, 0.1); /* Subtle border for elegance */
-            display: flex; /* Use flexbox for vertical centering */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #2E7D32;
+            display: flex;
             flex-direction: column;
-            justify-content: center; /* Center content vertically */
-            min-height: 200px; /* Minimum height to ensure consistent size */
+            justify-content: center;
+            min-height: 200px;
         }
 
         .value-box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
 
         .value-box h3 {
-            color: #1A6F2E;
-            font-size: 2rem;
+            color: #2E7D32;
+            font-size: 1.5rem;
             font-weight: 600;
-            margin-bottom: 15px; /* Reduced margin for better fit */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+            margin-bottom: 15px;
         }
 
         .value-box p {
-            font-size: 1.1rem; /* Slightly reduced for better fit */
-            color: #4A6C57;
-            padding: 10px; /* Reduced padding to prevent overflow */
-            word-wrap: break-word; /* Ensure text wraps if too long */
+            color: #555555;
+            font-size: 1rem;
+            padding: 0;
         }
 
         .why-choose-us, .mission {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
+            background-color: #FFFFFF;
+            padding: 30px;
             margin-top: 40px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-            border: 2px solid rgba(26, 111, 46, 0.2); /* Elegant border */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .why-choose-us h2 {
-            color: #1A6F2E;
-            font-size: 2.5rem;
+            font-size: 2rem;
+            color: #2E7D32;
             font-weight: 700;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
         }
 
         .why-choose-us ul {
             list-style-type: none;
             padding: 0;
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
+            text-align: left;
         }
 
         .why-choose-us li {
-            font-size: 1.2rem;
-            color: #4A6C57;
-            padding: 15px 0;
-            text-align: left;
+            font-size: 1rem;
+            color: #555555;
+            padding: 10px 0;
             position: relative;
         }
 
         .why-choose-us li:before {
             content: "•";
-            color: #1A6F2E;
-            font-size: 1.5rem;
+            color: #2E7D32;
+            font-size: 1.2rem;
             margin-right: 10px;
             vertical-align: middle;
         }
 
-        section h3 {
-            color: #1A6F2E;
-            font-size: 2.2rem;
-            font-weight: 600;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
         footer {
-            background: linear-gradient(90deg, #145A32 0%, #1A6F2E 100%);
-            color: white;
-            padding: 50px 40px;
+            background-color: #2E7D32;
+            color: #FFFFFF;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 1.2rem;
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-            border-top: 2px solid rgba(255, 255, 255, 0.2); /* Elegant border */
+            font-size: 0.9rem;
         }
 
         footer a {
-            color: #F8F9FA;
+            color: #F5F5F5;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
+            margin: 0 10px;
+            transition: color 0.3s ease;
         }
 
         footer a:hover {
-            color: #ffffff;
+            color: #FFFFFF;
             text-decoration: underline;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
 
         @media screen and (max-width: 768px) {
             header {
-                padding: 15px 20px; /* Reduced padding for mobile */
-                display: flex; /* Use flexbox for horizontal layout */
-                align-items: center; /* Vertically center items */
-                justify-content: space-between; /* Space between title and menu button */
-                text-align: center; /* Center the heading text for mobile */
+                padding: 15px 20px;
             }
 
             header h1 {
-                font-size: 1.8rem; /* Reduced for mobile, still professional */
-                margin: 0;
-                flex: 1; /* Allow title to grow and shrink as needed */
-                text-align: center; /* Center the heading text */
-                padding: 0 10px; /* Add horizontal padding for better centering */
+                font-size: 1.5rem;
             }
 
             header img {
-                display: none; /* Hide logo on mobile */
-            }
-
-            #menu-btn, #close-btn {
-                font-size: 1.8rem;
-                position: static; /* Remove absolute positioning for flex layout */
-                margin-left: 10px; /* Add spacing between title and menu button */
+                height: 50px;
             }
 
             section {
-                padding: 60px 20px;
+                padding: 40px 20px;
             }
 
-            h2, .why-choose-us h2, section h3 {
-                font-size: 2rem;
+            h2, section h3 {
+                font-size: 1.8rem;
             }
 
-            .about-text, section p, .why-choose-us li, .value-box p {
-                font-size: 1.1rem;
+            .about-text, section p {
                 padding: 20px;
-                border-radius: 10px;
             }
 
-            .our-values, .services {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .value-box, .service-box {
-                width: 100%;
+            .value-box {
                 padding: 20px;
-                border-radius: 10px;
-                min-height: 180px; /* Adjusted for mobile to maintain centering */
-            }
-
-            .value-box h3, .service-box h3 {
-                font-size: 1.6rem;
             }
 
             .why-choose-us, .mission {
-                padding: 30px;
+                padding: 20px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            #nav-menu {
+                display: flex !important;
+                position: static;
+                width: auto;
+                height: auto;
+                background: none;
+                flex-direction: row;
+                gap: 20px;
             }
 
-            footer {
-                padding: 30px 20px;
+            #nav-menu a {
                 font-size: 1rem;
+                padding: 10px 15px;
+                color: #2E7D32;
+            }
+
+            #nav-menu a:hover {
+                background-color: #F5F5F5;
+            }
+
+            #menu-btn, #close-btn {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Quardstar Solid General Services</h1>
         <img src="images/logo.png" alt="Quardstar Solid General Services Logo">
+        <h1>Quardstar Solid General Services</h1>
         <button id="menu-btn" aria-label="Toggle navigation menu">☰</button>
         <nav id="nav-menu">
             <button id="close-btn" aria-label="Close navigation menu">✕</button>
@@ -430,7 +369,7 @@
     <!-- Footer Section -->
     <footer>
         <p>© 2025 Quardstar Solid General Services. All rights reserved.</p>
-        <p>Follow us on: <a href="#">Facebook</a>, <a href="#">LinkedIn</a></p>
+        <p>Follow us: <a href="#">Facebook</a> | <a href="#">LinkedIn</a></p>
     </footer>
 
     <script>
