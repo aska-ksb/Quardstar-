@@ -6,41 +6,292 @@
     <title>Contact Us - Quardstar Solid General Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QZS51E11T3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QZS51E11T3');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZS51E11T3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QZS51E11T3');
+    </script>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Roboto', 'Open Sans', sans-serif; line-height: 1.6; background-color: #FFFFFF; color: #333333; }
-        header { background-color: #FFFFFF; color: #2E7D32; position: sticky; top: 0; padding: 20px 40px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); z-index: 1000; display: flex; align-items: center; justify-content: space-between; }
-        header h1 { font-size: 1.8rem; font-weight: 700; color: #2E7D32; text-transform: uppercase; letter-spacing: 0.5px; }
-        header img { height: 60px; border-radius: 5px; }
-        #menu-btn { font-size: 1.8rem; background: none; border: none; color: #2E7D32; cursor: pointer; transition: color 0.3s ease; }
-        #menu-btn:hover { color: #4CAF50; }
-        #nav-menu { display: none; position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background-color: rgba(46, 125, 50, 0.95); z-index: 1001; flex-direction: column; justify-content: center; align-items: center; transition: right 0.3s ease-in-out; }
-        #nav-menu.active { display: flex; right: 0; }
-        #nav-menu a { color: #FFFFFF; text-decoration: none; font-size: 1.5rem; font-weight: 500; padding: 15px 30px; transition: background-color 0.3s ease; }
-        #nav-menu a:hover { background-color: rgba(255, 255, 255, 0.1); border-radius: 5px; }
-        #close-btn { position: absolute; top: 20px; right: 30px; font-size: 1.8rem; color: #FFFFFF; background: none; border: none; cursor: pointer; transition: color 0.3s ease; }
-        #close-btn:hover { color: #F5F5F5; }
-        section { padding: 40px 40px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        h2 { font-size: 2rem; color: #2E7D32; font-weight: 700; margin-bottom: 20px; letter-spacing: 0.5px; }
-        section p { font-size: 1.1rem; line-height: 1.8; color: #555555; max-width: 800px; margin: 0 auto 30px; }
-        .contact-form { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; font-family: 'Roboto', sans-serif; }
-        .contact-form textarea { height: 150px; resize: vertical; }
-        .contact-form button { background-color: #2E7D32; color: #FFFFFF; padding: 12px 20px; border: none; border-radius: 5px; font-size: 1.2rem; font-weight: 500; cursor: pointer; transition: background-color 0.3s ease; }
-        .contact-form button:hover { background-color: #4CAF50; }
-        footer { background-color: #2E7D32; color: #FFFFFF; padding: 40px 20px; text-align: center; font-size: 0.9rem; }
-        footer a { color: #F5F5F5; text-decoration: none; margin: 0 10px; transition: color 0.3s ease; }
-        footer a:hover { color: #FFFFFF; text-decoration: underline; }
-        @media screen and (max-width: 768px) { header { padding: 15px 20px; } header h1 { font-size: 1.5rem; } header img { height: 50px; } section { padding: 30px 20px; } h2 { font-size: 1.8rem; } section p { font-size: 1rem; } .contact-form { padding: 20px; } }
-        @media screen and (min-width: 1024px) { #nav-menu { display: flex !important; position: static; width: auto; height: auto; background: none; flex-direction: row; gap: 20px; } #nav-menu a { font-size: 1rem; padding: 10px 15px; color: #2E7D32; } #nav-menu a:hover { background-color: #F5F5F5; } #menu-btn, #close-btn { display: none; } }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', 'Open Sans', sans-serif;
+            line-height: 1.6;
+            background-color: #FFFFFF;
+            color: #333333;
+        }
+
+        header {
+            background-color: #FFFFFF;
+            color: #2E7D32;
+            position: sticky;
+            top: 0;
+            padding: 20px 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2E7D32;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        header img {
+            height: 60px;
+            border-radius: 5px;
+        }
+
+        #menu-btn {
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: #2E7D32;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        #menu-btn:hover {
+            color: #4CAF50;
+        }
+
+        #nav-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(46, 125, 50, 0.95);
+            z-index: 1001;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: right 0.3s ease-in-out;
+        }
+
+        #nav-menu.active {
+            display: flex;
+            right: 0;
+        }
+
+        #nav-menu a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 500;
+            padding: 15px 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        #nav-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        #close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 1.8rem;
+            color: #FFFFFF;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        #close-btn:hover {
+            color: #F5F5F5;
+        }
+
+        section {
+            padding: 40px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #2E7D32;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555555;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background-color: #2E7D32;
+            color: #FFFFFF;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #4CAF50;
+        }
+
+        .contact-info {
+            max-width: 800px;
+            margin: 40px auto 0;
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            color: #2E7D32;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555555;
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: #2E7D32;
+            text-decoration: underline;
+        }
+
+        .contact-info a:hover {
+            color: #4CAF50;
+        }
+
+        footer {
+            background-color: #2E7D32;
+            color: #FFFFFF;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #F5F5F5;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #FFFFFF;
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header img {
+                height: 50px;
+            }
+
+            section {
+                padding: 30px 20px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            section p {
+                font-size: 1rem;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+            .contact-info {
+                padding: 20px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            #nav-menu {
+                display: flex !important;
+                position: static;
+                width: auto;
+                height: auto;
+                background: none;
+                flex-direction: row;
+                gap: 20px;
+            }
+
+            #nav-menu a {
+                font-size: 1rem;
+                padding: 10px 15px;
+                color: #2E7D32;
+            }
+
+            #nav-menu a:hover {
+                background-color: #F5F5F5;
+            }
+
+            #menu-btn,
+            #close-btn {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -63,12 +314,19 @@
         <p>If you have any questions, feel free to reach out to us. We're happy to assist you with any inquiries!</p>
         <div class="contact-form">
             <form action="https://formspree.io/f/mdkeyvgk" method="post">
-                <input type="text" name="name" placeholder="Your Name" required><br>
-                <input type="email" name="email" placeholder="Your Email" required><br>
-                <textarea name="message" placeholder="Your Message" required></textarea><br>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
         </div>
+    </section>
+
+    <section class="contact-info">
+        <h3>Other Ways to Reach Us</h3>
+        <p><strong>Address:</strong> Abia House, Wing A, Plot 979 Ahmadu Bello Way, 900103, Abuja, Nigeria.</p>
+        <p><strong>Phone:</strong> <a href="tel:+2349169117823">+2349169117823</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@quardstarsolid.com">info@quardstarsolid.com</a></p>
     </section>
 
     <footer>
@@ -77,16 +335,34 @@
     </footer>
 
     <script>
+        // Menu Script
         document.addEventListener("DOMContentLoaded", function () {
             const menuBtn = document.getElementById("menu-btn");
             const navMenu = document.getElementById("nav-menu");
             const navLinks = navMenu.querySelectorAll("a");
             const closeBtn = document.getElementById("close-btn");
 
-            menuBtn.addEventListener("click", function (e) { e.stopPropagation(); navMenu.classList.toggle("active"); });
-            closeBtn.addEventListener("click", function (e) { e.stopPropagation(); navMenu.classList.remove("active"); });
-            navLinks.forEach(link => { link.addEventListener("click", function () { navMenu.classList.remove("active"); }); });
-            document.addEventListener("click", function (event) { if (!menuBtn.contains(event.target) && !navMenu.contains(event.target)) { navMenu.classList.remove("active"); } });
+            menuBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                navMenu.classList.toggle("active");
+            });
+
+            closeBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                navMenu.classList.remove("active");
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", function () {
+                    navMenu.classList.remove("active");
+                });
+            });
+
+            document.addEventListener("click", function (event) {
+                if (!menuBtn.contains(event.target) && !navMenu.contains(event.target)) {
+                    navMenu.classList.remove("active");
+                }
+            });
         });
     </script>
 </body>
