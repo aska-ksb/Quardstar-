@@ -5,15 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quardstar Solid General Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QZS51E11T3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QZS51E11T3');
-</script>
     <style>
         * {
             box-sizing: border-box;
@@ -259,6 +250,59 @@
             text-decoration: underline;
         }
 
+        /* Cookie Consent Styles */
+        #cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(46, 125, 50, 0.95);
+            color: #FFFFFF;
+            z-index: 1002;
+            padding: 20px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .cookie-message {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .cookie-message p {
+            font-size: 1rem;
+            margin: 0;
+            flex: 1;
+        }
+
+        .cookie-message a {
+            color: #F5F5F5;
+            text-decoration: underline;
+        }
+
+        .cookie-message a:hover {
+            color: #FFFFFF;
+        }
+
+        .cookie-message button {
+            background-color: #FFFFFF;
+            color: #2E7D32;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .cookie-message button:hover {
+            background-color: #F5F5F5;
+        }
+
         @media screen and (max-width: 768px) {
             header {
                 padding: 15px 20px;
@@ -307,6 +351,16 @@
 
             .service-box {
                 padding: 20px;
+            }
+
+            .cookie-message {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-message button {
+                width: 100%;
+                margin-top: 10px;
             }
         }
 
@@ -396,7 +450,17 @@
         <p>Follow us: <a href="#">Facebook</a> | <a href="#">LinkedIn</a></p>
     </footer>
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" style="display: none;">
+        <div class="cookie-message">
+            <p>We use cookies to enhance your experience and analyze site usage. <a href="privacy.html">Learn more</a>.</p>
+            <button id="accept-cookies">Accept</button>
+            <button id="decline-cookies">Decline</button>
+        </div>
+    </div>
+
     <script>
+        // Menu Script
         document.addEventListener("DOMContentLoaded", function () {
             const menuBtn = document.getElementById("menu-btn");
             const navMenu = document.getElementById("nav-menu");
@@ -425,6 +489,65 @@
                 }
             });
         });
+
+        // Cookie Consent Script
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const cookieConsent = document.getElementById("cookie-consent");
+            const acceptBtn = document.getElementById("accept-cookies");
+            const declineBtn = document.getElementById("decline-cookies");
+
+            if (!getCookie("cookieConsent")) {
+                cookieConsent.style.display = "block";
+            }
+
+            acceptBtn.addEventListener("click", function () {
+                setCookie("cookieConsent", "accepted", 365);
+                cookieConsent.style.display = "none";
+                loadGoogleAnalytics();
+            });
+
+            declineBtn.addEventListener("click", function () {
+                setCookie("cookieConsent", "declined", 365);
+                cookieConsent.style.display = "none";
+            });
+        });
+
+        function loadGoogleAnalytics() {
+            const script = document.createElement("script");
+            script.async = true;
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-QZS51E11T3";
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-QZS51E11T3');
+        }
+
+        if (getCookie("cookieConsent") === "accepted") {
+            loadGoogleAnalytics();
+        }
     </script>
 </body>
 </html>
